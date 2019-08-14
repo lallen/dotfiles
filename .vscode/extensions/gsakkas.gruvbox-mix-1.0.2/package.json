@@ -1,0 +1,38 @@
+{
+	"name": "gruvbox-mix",
+	"displayName": "Gruvbox Mix Theme",
+	"description": "A middle ground of different Gruvbox themes for VS Code.",
+	"version": "1.0.2",
+	"author": "gsakkas (https://github.com/gsakkas)",
+	"publisher": "gsakkas",
+	"homepage": "https://github.com/gsakkas/gruvbox-mix",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gsakkas/gruvbox-mix.git"
+	},
+	"engines": {
+		"vscode": "^1.30.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"contributes": {
+		"themes": [
+			{
+				"label": "Gruvbox Mix Dark",
+				"uiTheme": "vs-dark",
+				"path": "./themes/gruvbox-dark-mix.color-theme.json"
+			},
+			{
+				"label": "Gruvbox Mix Light",
+				"uiTheme": "vs",
+				"path": "./themes/gruvbox-light-mix.color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "4bc98f56-f272-49e6-b9df-964482ea7eb9",
+		"publisherId": "c4fdb814-d3af-4401-90da-3ad1b68f0f7b",
+		"publisherDisplayName": "gsakkas"
+	}
+}

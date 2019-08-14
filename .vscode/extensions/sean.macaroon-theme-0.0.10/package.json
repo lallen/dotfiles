@@ -1,0 +1,35 @@
+{
+	"name": "Macaroon-theme",
+	"displayName": "Macaroon Theme",
+	"description": "A light theme for vscode",
+	"version": "0.0.10",
+	"publisher": "sean",
+	"engines": {
+		"vscode": "^1.12.0"
+	},
+	"categories": [
+		"Themes"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/imseanpan/Macaroon-Theme.git"
+	},
+	"bugs": {
+		"url": "https://github.com/imseanpan/Macaroon-Theme/issues"
+	},
+	"icon": "icon.png",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Macaroon Theme",
+				"uiTheme": "vs",
+				"path": "./themes/sean-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "f38cd783-cf49-44aa-9411-649cce64a988",
+		"publisherId": "c7bdbcba-eb3f-498e-aef2-924a23bbf68f",
+		"publisherDisplayName": "sean"
+	}
+}

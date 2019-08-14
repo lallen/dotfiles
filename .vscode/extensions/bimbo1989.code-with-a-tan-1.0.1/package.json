@@ -1,0 +1,30 @@
+{
+	"name": "code-with-a-tan",
+	"displayName": "Code with a tan",
+	"publisher": "bimbo1989",
+	"description": "Like Solarized, but nicer",
+	"version": "1.0.1",
+	"engines": {
+		"vscode": "^1.29.0"
+	},
+	"repository": "https://github.com/bimbo1989/code-with-a-tan",
+	"icon": "icon/sun-lotion.png",
+	"categories": [
+		"Themes"
+	],
+	"homepage": "https://github.com/Microsoft/vscode-wordcount/blob/master/README.md",
+	"contributes": {
+		"themes": [
+			{
+				"label": "Code with a tan",
+				"uiTheme": "vs",
+				"path": "./themes/Code with a tan-color-theme.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "b341aebc-bcfe-4815-9684-7043cb6f3ddc",
+		"publisherId": "3ed072a6-aa01-4b03-869a-6eae45638d25",
+		"publisherDisplayName": "Marco Bimbati"
+	}
+}
