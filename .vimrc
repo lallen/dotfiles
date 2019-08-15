@@ -42,8 +42,6 @@ Plug 'wincent/command-t'
 "Appearance"
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-Plug 'chriskempson/base16-vim'
-
 
 "Languages"
 Plug 'posva/vim-vue'
@@ -84,10 +82,6 @@ let g:goyo_linenr = 1
 map <C-g> :Goyo<CR>
 
 call plug#end()            " required for vim plug
-
-"you have to call colors after plug end
-let base16colorspace=256  " Access colors present in 256 colorspace
-colorscheme base16-default-dark 	 
 
 
 
