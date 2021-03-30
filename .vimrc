@@ -1,58 +1,64 @@
-" be iMproved, required
-set nocompatible              
+" VIMprove yourself, this is required 
+syntax on
 filetype on                  
-
-" activates filetype detection
 filetype indent on
 
-"Activates syntax highlighting among other things
-syntax on
+set expandtab
+set autoindent
+set smartindent
+set nowrap
+set nocompatible              
+set hidden
+set nu rnu
+set backspace=indent,eol,start
 set clipboard=unnamed
+set incsearch
+set rtp+=/usr/local/opt/fzf
+set splitbelow
+set splitright
+set encoding=utf-8
 
-"Enable Folding"
+set colorcolumn=63
+highlight ColorColumn ctermbg=0 guibg=blue
+
+"Maps
+let mapleader= " "
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+inoremap kj <Esc>
+inoremap jj <Esc>
+inoremap jk <Esc>
+
+"Enable Folding
 set foldmethod=indent
 set foldlevel=99
 nnoremap <space> za
 
-"Tabs are spaces
-set expandtab
+"Tagbar 
+nmap <C-d> :TagbarToggle<CR>
 
-"Adds spellcheck on commit messages"
-autocmd Filetype gitcommit setlocal spell textwidth=72
+"Adds spellcheck on commit messages
+autocmd Filetype gitcommit setlocal spell textwidth=66
 
-"Activates Line Numbers"
-set number
-map <C-l> :set number <CR>
-
-" allows you to deal with multiple unsaved
-" buffers simultaneously without resorting
-" to misusing tabs
-set hidden
-
-" just hit backspace without this one and
-" see for yourself
-set backspace=indent,eol,start
-
-"Pathogen"
+"Pathogen
 execute pathogen#infect()
 
-"Set the runtime path to include Vimplug and initialize
+"Include Vimplug and initialize
 call plug#begin('~/.vim/plugged')
 
-"General"
-Plug 'terryma/vim-multiple-cursors'
+"General
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-Plug 'easymotion/vim-easymotion'
-Plug 'vim-scripts/L9'
-Plug 'vim-scripts/FuzzyFinder'
-Plug 'wincent/command-t'
 Plug 'vim-syntastic/syntastic'
-Plug 'ycm-core/YouCompleteMe'
-
-" Splits
-set splitbelow
-set splitright
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'preservim/tagbar'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
 
 "Appearance
 Plug 'vim-airline/vim-airline'
@@ -60,42 +66,16 @@ Plug 'morhetz/gruvbox'
 Plug 'jacoborus/tender.vim'
 Plug 'jnurmine/Zenburn'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mbbill/undotree'
 
-"Languages"
-
+"Language and Highlights
 Plug 'ap/vim-css-color'
-Plug 'vim-scripts/indentpython.vim'
-Plug 'vim-ruby/vim-ruby'
-Plug 'fatih/vim-go'
-Plug 'raichoo/haskell-vim', { 'for': 'haskell' }
-Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'b4b4r07/vim-hcl', { 'for': 'hcl' }
-Plug 'rust-lang/rust.vim', { 'for': 'rust' }
-Plug 'cespare/vim-toml', { 'for': 'toml' }
 Plug 'vim-python/python-syntax'
 let g:python_highlight_all = 1
 Plug 'tpope/vim-markdown'
-Plug 'wlangstroth/vim-racket'
 
-"fzf fuzzy finder"
-Plug 'junegunn/fzf.vim'
-set rtp+=/usr/local/opt/fzf
-
-"SnipMate"
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-
-"Snipmate Optional"
-Plug 'honza/vim-snippets'
-
-"Nerdtree"
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'jistr/vim-nerdtree-tabs'
-
-"Calling Nerdtree and its settings"
+"Calling Nerdtree and its settings
 let NERDTreeQuitOnOpen = 1
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -104,19 +84,19 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 map <C-f> :NERDTreeToggle<CR>
 
-"Goyo (zen mode)"
+"Goyo (zen mode)
 Plug 'junegunn/goyo.vim'
-
-"Goyo config"
 let g:goyo_linenr = 1
 map <C-g> :Goyo<CR>
 
+" required for vim plug
+call plug#end()  
 
-call plug#end()            " required for vim plug
-
+"GUI fixes
 if has('gui_running')
   set background=dark
   colorscheme solarized
 else
+  set background=dark
   colorscheme zenburn
 endif
